@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafío de Ecuaciones: Suite de Despeje</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+
+    <div id="welcome-screen">
+        <div class="glass-card">
+            <div class="icon-header">🧮</div>
+            <h1>Suite de Ecuaciones</h1>
+            <p>Maestría en Despeje de Variables</p>
+            
+            <div id="step-1">
+                <label>Selecciona tu Grupo:</label>
+                <select id="group-select-ui">
+                    <option value="" disabled selected>Elegir...</option>
+                    <option value="8-3">Grupo 8-3</option>
+                    <option value="8-4">Grupo 8-4</option>
+                    <option value="9-1">Grupo 9-1</option>
+                    <option value="9-2">Grupo 9-2</option>
+                    <option value="9-3">Grupo 9-3</option>
+                    <option value="9-4">Grupo 9-4</option>
+                </select>
+                <button id="btn-to-step-2" class="btn-main">Siguiente</button>
+            </div>
+
+            <div id="step-2" class="hidden">
+                <label>Tu Nombre:</label>
+                <select id="player-select-ui"></select>
+
+                <label style="margin-top: 15px; display: block;">Nivel de Desafío:</label>
+                <select id="difficulty-ui">
+                    <option value="basico">Básico (Sumas y Restas)</option>
+                    <option value="avanzado" selected>Avanzado (Dos Pasos)</option>
+                    <option value="profesional">Profesional (Fórmulas y Raíces)</option>
+                </select>
+
+                <button id="btn-start-game" class="btn-main">¡Comenzar Desafío!</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="main-game-container" class="hidden">
+        <div class="game-header">
+            <div class="header-ui">
+                <div id="player-info">👨‍🚀 Cargando...</div>
+                <div id="game-timer">Tiempo: 0s</div>
+                <div id="save-status">Listo</div>
+            </div>
+        </div>
+        
+        <div id="game-board"></div>
+    </div>
+
+    <div id="question-modal" class="modal-hidden">
+        <div id="modal-content">
+            <h2 id="question-text"></h2>
+            <div id="answer-options"></div>
+            <button id="submit-answer" class="btn-main">Responder</button>
+        </div>
+    </div>
+
+    <div id="certificate-container" class="hidden-cert">
+        <div id="certificate">
+            <div class="cert-border">
+                <div class="cert-content">
+                    <h1>Certificado de Maestría</h1>
+                    <p>Otorgado a:</p>
+                    <h2 id="cert-name">Estudiante</h2>
+                    <p>Por demostrar su dominio en:</p>
+                    <h3 id="cert-topic">Despeje de Ecuaciones</h3>
+                    <div class="cert-footer">
+                        <p>Nota: <span id="cert-grade">0.0</span></p>
+                        <p>Fecha: <span id="cert-date"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button id="btn-download-cert">Descargar Certificado (JPG)</button>
+    </div>
+
+    <audio id="snd-card" src="recursos/selecciono_carta.mp3" preload="auto"></audio>
+    <audio id="snd-correct" src="recursos/respuesta_correcta.mp3" preload="auto"></audio>
+    <audio id="snd-error" src="recursos/respuesta_incorrecta.mp3" preload="auto"></audio>
+    <audio id="snd-win" src="recursos/gano_juego.mp3" preload="auto"></audio>
+
+    <script src="comunicacion_com5A.js"></script>
+    <script src="preguntas.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
