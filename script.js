@@ -227,7 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Cálculo de nota (0.0 a 5.0)
             const T_MIN = 60; 
-            const T_MAX = 300;
+            const T_MAX = 400;
             let nota = 5 - ((tiempoFinal - T_MIN) * (5 / (T_MAX - T_MIN)));
             nota = Math.max(0, Math.min(5, nota)).toFixed(1); 
 
